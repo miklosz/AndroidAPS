@@ -48,24 +48,25 @@ enum class SourceSensor(val text: String) {
     ZT_PREDICTION("ZTPrediction"),
     ;
 
-    fun isLibre1(): Boolean = arrayListOf(
-        LIBRE_1_OTHER,
-        LIBRE_1_NET,
-        LIBRE_1_BLUE,
-        LIBRE_1_PL,
-        LIBRE_1_BLUCON,
-        LIBRE_1_TOMATO,
-        LIBRE_1_RF,
-        LIBRE_1_LIMITTER,
-        LIBRE_1_BUBBLE,
-        LIBRE_1_ATOM,
-        LIBRE_1_GLIMP,
-        UNKNOWN // Better check for FLAT on unknown sources too
-    ).any { it.text == text }
+    // fun isLibre1(): Boolean = arrayListOf(
+    //     LIBRE_1_OTHER,
+    //     LIBRE_1_NET,
+    //     LIBRE_1_BLUE,
+    //     LIBRE_1_PL,
+    //     LIBRE_1_BLUCON,
+    //     LIBRE_1_TOMATO,
+    //     LIBRE_1_RF,
+    //     LIBRE_1_LIMITTER,
+    //     LIBRE_1_BUBBLE,
+    //     LIBRE_1_ATOM,
+    //     LIBRE_1_GLIMP,
+    //     UNKNOWN // Better check for FLAT on unknown sources too
+    // ).any { it.text == text }
+
+    // quick hack to enable SMB always https://github.com/NightscoutFoundation/xDrip/issues/3841
+    fun isLibre1(): Boolean = false
 
     companion object {
-
         fun fromString(source: String?) = entries.firstOrNull { it.text == source } ?: UNKNOWN
-
     }
 }

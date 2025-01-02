@@ -64,6 +64,9 @@ class XdripSourcePlugin @Inject constructor(
             SourceSensor.DEXCOM_G7_XDRIP,
             SourceSensor.LIBRE_2_NATIVE,
             SourceSensor.LIBRE_3,
+            //quick hack to enable SMB always https://github.com/NightscoutFoundation/xDrip/issues/3841
+            SourceSensor.LIBRE_1_LIMITTER,
+            SourceSensor.LIBRE_1_OTHER
         ).any { it == glucoseValue.sourceSensor }
     }
 
